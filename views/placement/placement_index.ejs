@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placement</title>
+    <%- include('../cdn.ejs') %>
+    <!-- Bootstrap & icons -->
+    <style>
+      body {
+        background-color: #edf6f9;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .header {
+        background-color: #006d77;
+        text-align: center;
+        color: white;
+        padding: 0.5rem 2rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+        font-size: 2rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 2.5rem;
+      }
+
+      .btn-block {
+        background-color: #006d77;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        width: 100%;
+        position: relative;
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .btn-block:hover {
+        background-color: #005f6b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="py-5">
+      <div class="col-md-4 col-lg-3 header">Placement</div>
+
+      <div class="col-md-4 mx-auto mt-3">
+        <a href="/add_company">
+          <button class="btn-block text-center">Add Company</button>
+        </a>
+        <a href="/interview_calls">
+          <button class="btn-block text-center">Interview Calls</button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

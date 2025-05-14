@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Posts</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #edf6f9;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .header {
+        background-color: #006d77;
+        text-align: center;
+        color: white;
+        padding: 0.5rem 2rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+        font-size: 2rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+        border: 3px solid #006d77;
+      }
+
+      .job-title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #006d77;
+        padding-bottom: 0.4rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .job-title {
+        font-weight: bold;
+        font-size: 2rem;
+        color: #006d77;
+      }
+
+      .collapse-icon {
+        font-size: 2rem;
+        color: #006d77;
+        cursor: pointer;
+      }
+
+      .job-description {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #006d77;
+        margin-top: 0.5rem;
+        padding-top: 0.2rem;
+      }
+
+      th {
+        background-color: #006d77 !important;
+        color: white !important;
+        text-align: center;
+      }
+
+      td {
+        text-align: center;
+        vertical-align: middle !important;
+      }
+
+      .job-section {
+        margin-bottom: 1rem;
+      }
+
+      .chevron-btn {
+        border: none;
+        background: transparent;
+        color: #006d77;
+        font-size: 1.5rem;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid py-5">
+      <!-- Header -->
+      <div class="row mb-4">
+        <div class="col-md-3 col-sm-4 header">Job Posts</div>
+        <div class="col-md-9 col-sm-8 d-flex justify-content-end">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="User"
+            class="avatar"
+          />
+        </div>
+      </div>
+
+      <!-- JOB TEMPLATE START -->
+      <!-- Repeat this block with different IDs and titles -->
+
+      <!-- Telecaller -->
+      <div class="job-section mt-3">
+        <div class="job-title-wrapper col-md-5 mx-5">
+          <div class="job-title">1. Telecaller</div>
+          <button
+            class="chevron-btn"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTelecaller"
+            aria-expanded="false"
+          >
+            <i class="bi bi-chevron-down" id="iconTelecaller"></i>
+          </button>
+        </div>
+        <div class="collapse" id="collapseTelecaller">
+          <div class="job-description col-md-5 mx-5 mb-3">
+            The role involves explaining course details, converting leads into
+            walk-ins or enrollments, and maintaining call records. Candidates
+            should have good communication skills in English, Hindi, and
+            Marathi, along with basic computer knowledge.
+          </div>
+          <div class="table-responsive mx-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sr.N</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Mail ID</th>
+                  <th>Gender</th>
+                  <th>Experience</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Sakshi Kandge</td>
+                  <td>1234567897</td>
+                  <td>sakshi@gmail.com</td>
+                  <td>Female</td>
+                  <td>Fresher</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Amruta Marathe</td>
+                  <td>1234567897</td>
+                  <td>amruta@gmail.com</td>
+                  <td>Female</td>
+                  <td>1yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Pooja Lende</td>
+                  <td>1234567897</td>
+                  <td>pooja@gmail.com</td>
+                  <td>Female</td>
+                  <td>2yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Counsellor -->
+      <div class="job-section mt-3">
+        <div class="job-title-wrapper col-md-5 mx-5">
+          <div class="job-title">2. Counsellor</div>
+          <button
+            class="chevron-btn"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseCounsellor"
+            aria-expanded="false"
+          >
+            <i class="bi bi-chevron-down" id="iconCounsellor"></i>
+          </button>
+        </div>
+        <div class="collapse" id="collapseCounsellor">
+          <div class="job-description col-md-5 mb-3 mx-5">
+            This role requires converting leads, explaining course details, and
+            good communication in English, Hindi, and Marathi.
+          </div>
+          <div class="table-responsive mx-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sr.N</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Mail ID</th>
+                  <th>Gender</th>
+                  <th>Experience</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Sakshi Kandge</td>
+                  <td>1234567897</td>
+                  <td>sakshi@gmail.com</td>
+                  <td>Female</td>
+                  <td>Fresher</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Amruta Marathe</td>
+                  <td>1234567897</td>
+                  <td>amruta@gmail.com</td>
+                  <td>Female</td>
+                  <td>1yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Pooja Lende</td>
+                  <td>1234567897</td>
+                  <td>pooja@gmail.com</td>
+                  <td>Female</td>
+                  <td>2yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trainer -->
+      <div class="job-section mt-3">
+        <div class="job-title-wrapper col-md-5 mx-5">
+          <div class="job-title">3. Trainer</div>
+          <button
+            class="chevron-btn"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTrainer"
+            aria-expanded="false"
+          >
+            <i class="bi bi-chevron-down" id="iconTrainer"></i>
+          </button>
+        </div>
+        <div class="collapse" id="collapseTrainer">
+          <div class="job-description col-md-5 mb-3 mx-5">
+            Responsible for delivering high-quality training sessions and
+            assisting students in practicals and soft skills.
+          </div>
+          <div class="table-responsive mx-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sr.N</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Mail ID</th>
+                  <th>Gender</th>
+                  <th>Experience</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Sakshi Kandge</td>
+                  <td>1234567897</td>
+                  <td>sakshi@gmail.com</td>
+                  <td>Female</td>
+                  <td>Fresher</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Amruta Marathe</td>
+                  <td>1234567897</td>
+                  <td>amruta@gmail.com</td>
+                  <td>Female</td>
+                  <td>1yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Pooja Lende</td>
+                  <td>1234567897</td>
+                  <td>pooja@gmail.com</td>
+                  <td>Female</td>
+                  <td>2yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- HR -->
+      <div class="job-section mt-3">
+        <div class="job-title-wrapper col-md-5 mx-5">
+          <div class="job-title">4. HR</div>
+          <button
+            class="chevron-btn"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseHR"
+            aria-expanded="false"
+          >
+            <i class="bi bi-chevron-down" id="iconHR"></i>
+          </button>
+        </div>
+        <div class="collapse" id="collapseHR">
+          <div class="job-description col-md-5 mb-3 mx-5">
+            In charge of recruitment, interviews, employee engagement, and
+            performance tracking.
+          </div>
+          <div class="table-responsive mx-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sr.N</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Mail ID</th>
+                  <th>Gender</th>
+                  <th>Experience</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Sakshi Kandge</td>
+                  <td>1234567897</td>
+                  <td>sakshi@gmail.com</td>
+                  <td>Female</td>
+                  <td>Fresher</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Amruta Marathe</td>
+                  <td>1234567897</td>
+                  <td>amruta@gmail.com</td>
+                  <td>Female</td>
+                  <td>1yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Pooja Lende</td>
+                  <td>1234567897</td>
+                  <td>pooja@gmail.com</td>
+                  <td>Female</td>
+                  <td>2yrs</td>
+                  <td>
+                    <a href="/edit">
+                      <i
+                        class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Toggle Chevron Script -->
+    <script>
+      document.querySelectorAll(".chevron-btn").forEach((btn) => {
+        const collapseId = btn.getAttribute("data-bs-target").substring(1)
+        const icon = btn.querySelector("i")
+        const collapseEl = document.getElementById(collapseId)
+
+        collapseEl.addEventListener("show.bs.collapse", () => {
+          icon.classList.remove("bi-chevron-down")
+          icon.classList.add("bi-chevron-up")
+        })
+
+        collapseEl.addEventListener("hide.bs.collapse", () => {
+          icon.classList.remove("bi-chevron-up")
+          icon.classList.add("bi-chevron-down")
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap CDN -->
+    <%- include('../cdn.ejs') %>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="d-flex justify-content-center align-items-center">
+    <div
+      class="card p-4"
+      style="
+        background-color: #006d77;
+        border-radius: 1rem;
+        width: 22rem;
+        color: white;
+      "
+    >
+      <h4 class="fw-bold mb-3 text-center">Login</h4>
+
+      <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="loginEmail"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="loginPassword"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-light fw-semibold mt-2 w-100">
+          Login
+        </button>
+      </form>
+      <!-- Sign Up Option -->
+      <p class="mt-4 text-center" style="color: #e0f7f7">
+        Don’t have an account?
+        <a href="/signup" class="text-warning text-decoration-none fw-semibold"
+          >Sign Up</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

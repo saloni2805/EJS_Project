@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruitment</title>
+    <%- include('../cdn.ejs') %>
+    <!-- Bootstrap & icons -->
+    <style>
+      body {
+        background-color: #edf6f9;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .header {
+        background-color: #006d77;
+        text-align: center;
+        color: white;
+        padding: 0.5rem 2rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+        font-size: 2rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 2.5rem;
+      }
+
+      .btn-block {
+        background-color: #006d77;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        width: 100%;
+        position: relative;
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .btn-block .badge {
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #006d77;
+        color: white;
+        font-weight: bold;
+        border: 2px solid white;
+        padding: 0.5rem;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+      }
+
+      .btn-block:hover {
+        background-color: #005f6b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="py-5">
+      <div class="col-md-3 header">Recruitment</div>
+
+      <div class="col-md-4 mx-auto">
+        <a href="/job_posts">
+          <button class="btn-block">
+            Job Posts
+            <span class="badge">04</span>
+          </button>
+        </a>
+        <a href="/scheduled_interview">
+          <button class="btn-block">
+            Scheduled Interviews
+            <span class="badge">02</span>
+          </button></a
+        >
+        <a href="/offers"
+          ><button class="btn-block">
+            Offers
+            <span class="badge">03</span>
+          </button></a
+        >
+        <a href="/recruitment_report">
+          <button class="btn-block">Report</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

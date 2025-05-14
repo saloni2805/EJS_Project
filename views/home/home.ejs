@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <%- include('../cdn.ejs') %>
+    <style>
+      body {
+        background-color: #edf6f9;
+        font-family: "Poppins", sans-serif;
+      }
+      .icon-card {
+        background-color: #006d77;
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        transition: transform 0.2s;
+      }
+      .icon-card:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+      .icon-card i {
+        font-size: 4rem;
+        color: white;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center min-vh-100"
+    >
+      <h2 class="mb-5 fs-1" style="color: #006d77">Welcome Admin!</h2>
+
+      <!-- Responsive row -->
+      <div class="row text-center g-5">
+        <div class="col-12 col-md-6 mb-4">
+          <a href="/placement" class="text-dark">
+            <div class="icon-card">
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <h5 class="fw-bold fs-3" style="color: #006d77">Placement</h5>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+          <a href="/recruitment" class="text-dark">
+            <div class="icon-card">
+              <i class="bi bi-person-lines-fill"></i>
+            </div>
+            <h5 class="fw-bold fs-3" style="color: #006d77">Recruitment</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
