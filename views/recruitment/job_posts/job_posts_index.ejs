@@ -97,9 +97,21 @@
   <body>
     <div class="container-fluid py-5">
       <!-- Header -->
-      <div class="row mb-4">
+      <div class="row mb-4 align-items-center">
         <div class="col-md-3 col-sm-4 header">Job Posts</div>
-        <div class="col-md-9 col-sm-8 d-flex justify-content-end">
+        <div
+          class="col-lg-8 col-md-6 col-sm-8 d-flex justify-content-end mb-2 mb-sm-0"
+        >
+          <a href="/add_candidate"
+            ><button
+              class="btn px-4 py-2 fw-semibold rounded-3 w-md-auto"
+              style="background-color: #006d77; color: white"
+            >
+              <i class="bi bi-person-plus-fill me-2"></i> Add Candidate
+            </button></a
+          >
+        </div>
+        <div class="col-md-1 col-sm-5 d-flex justify-content-end">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
             alt="User"
@@ -136,63 +148,64 @@
               <thead>
                 <tr>
                   <th>Sr.N</th>
+                  <th>Id</th>
                   <th>Name</th>
-                  <th>Contact</th>
-                  <th>Mail ID</th>
+                  <th>Email</th>
                   <th>Gender</th>
                   <th>Experience</th>
-                  <th>Action</th>
+                  <th>Job Post</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
+                <% let telecallerData = data.filter(val => val.job_post_type ===
+                'Telecaller'); if (telecallerData.length > 0) {
+                telecallerData.forEach((val, index) => { %>
                 <tr>
-                  <td>1.</td>
-                  <td>Sakshi Kandge</td>
-                  <td>1234567897</td>
-                  <td>sakshi@gmail.com</td>
-                  <td>Female</td>
-                  <td>Fresher</td>
+                  <td><%= index + 1 %>.</td>
+                  <td><%= val.candidate_id %></td>
+                  <td><%= val.candidate_name %></td>
+                  <td><%= val.candidate_email %></td>
+                  <td><%= val.candidate_gender %></td>
+                  <td><%= val.candidate_experience %></td>
+                  <td><%= val.job_post_type %></td>
                   <td>
-                    <a href="/edit">
+                    <a href="/view_candidate/<%- val.candidate_id %>">
                       <i
                         class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href="/delete_candidate/<%- val.candidate_id %>"
+                      onclick="return confirm('Are you sure?')"
+                    >
+                      <i
+                        class="bi bi-trash fw-bold"
+                        style="cursor: pointer; color: crimson"
+                      ></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="/edit_candidate/<%- val.candidate_id %>">
+                      <i
+                        class="bi bi-pencil fw-bold"
                         style="cursor: pointer; color: #006d77"
                       ></i
                     ></a>
                   </td>
                 </tr>
+                <% }); } else { %>
                 <tr>
-                  <td>2.</td>
-                  <td>Amruta Marathe</td>
-                  <td>1234567897</td>
-                  <td>amruta@gmail.com</td>
-                  <td>Female</td>
-                  <td>1yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
+                  <td colspan="11" class="text-center">
+                    No data found for Telecaller
                   </td>
                 </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Pooja Lende</td>
-                  <td>1234567897</td>
-                  <td>pooja@gmail.com</td>
-                  <td>Female</td>
-                  <td>2yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
-                  </td>
-                </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
@@ -222,63 +235,64 @@
               <thead>
                 <tr>
                   <th>Sr.N</th>
+                  <th>Id</th>
                   <th>Name</th>
-                  <th>Contact</th>
-                  <th>Mail ID</th>
+                  <th>Email</th>
                   <th>Gender</th>
                   <th>Experience</th>
-                  <th>Action</th>
+                  <th>Job Post</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
+                <% let counsellorData = data.filter(val => val.job_post_type ===
+                'Counsellor'); if (counsellorData.length > 0) {
+                counsellorData.forEach((val, index) => { %>
                 <tr>
-                  <td>1.</td>
-                  <td>Sakshi Kandge</td>
-                  <td>1234567897</td>
-                  <td>sakshi@gmail.com</td>
-                  <td>Female</td>
-                  <td>Fresher</td>
+                  <td><%= index + 1 %>.</td>
+                  <td><%= val.candidate_id %></td>
+                  <td><%= val.candidate_name %></td>
+                  <td><%= val.candidate_email %></td>
+                  <td><%= val.candidate_gender %></td>
+                  <td><%= val.candidate_experience %></td>
+                  <td><%= val.job_post_type %></td>
                   <td>
-                    <a href="/edit">
+                    <a href="/view_candidate/<%= val.candidate_id %>">
                       <i
                         class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href="/delete_candidate/<%- val.candidate_id %>"
+                      onclick="return confirm('Are you sure?')"
+                    >
+                      <i
+                        class="bi bi-trash fw-bold"
+                        style="cursor: pointer; color: crimson"
+                      ></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="/edit_candidate/<%- val.candidate_id %>">
+                      <i
+                        class="bi bi-pencil fw-bold"
                         style="cursor: pointer; color: #006d77"
                       ></i
                     ></a>
                   </td>
                 </tr>
+                <% }); } else { %>
                 <tr>
-                  <td>2.</td>
-                  <td>Amruta Marathe</td>
-                  <td>1234567897</td>
-                  <td>amruta@gmail.com</td>
-                  <td>Female</td>
-                  <td>1yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
+                  <td colspan="11" class="text-center">
+                    No data found for Counsellor
                   </td>
                 </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Pooja Lende</td>
-                  <td>1234567897</td>
-                  <td>pooja@gmail.com</td>
-                  <td>Female</td>
-                  <td>2yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
-                  </td>
-                </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
@@ -308,63 +322,64 @@
               <thead>
                 <tr>
                   <th>Sr.N</th>
+                  <th>Id</th>
                   <th>Name</th>
-                  <th>Contact</th>
-                  <th>Mail ID</th>
+                  <th>Email</th>
                   <th>Gender</th>
                   <th>Experience</th>
-                  <th>Action</th>
+                  <th>Job Post</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
+                <% let trainerData = data.filter(val => val.job_post_type ===
+                'Trainer'); if (trainerData.length > 0) {
+                trainerData.forEach((val, index) => { %>
                 <tr>
-                  <td>1.</td>
-                  <td>Sakshi Kandge</td>
-                  <td>1234567897</td>
-                  <td>sakshi@gmail.com</td>
-                  <td>Female</td>
-                  <td>Fresher</td>
+                  <td><%= index + 1 %>.</td>
+                  <td><%= val.candidate_id %></td>
+                  <td><%= val.candidate_name %></td>
+                  <td><%= val.candidate_email %></td>
+                  <td><%= val.candidate_gender %></td>
+                  <td><%= val.candidate_experience %></td>
+                  <td><%= val.job_post_type %></td>
                   <td>
-                    <a href="/edit">
+                    <a href="/view_candidate/<%= val.candidate_id %>">
                       <i
                         class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href="/delete_candidate/<%- val.candidate_id %>"
+                      onclick="return confirm('Are you sure?')"
+                    >
+                      <i
+                        class="bi bi-trash fw-bold"
+                        style="cursor: pointer; color: crimson"
+                      ></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="/edit_candidate/<%- val.candidate_id %>">
+                      <i
+                        class="bi bi-pencil fw-bold"
                         style="cursor: pointer; color: #006d77"
                       ></i
                     ></a>
                   </td>
                 </tr>
+                <% }); } else { %>
                 <tr>
-                  <td>2.</td>
-                  <td>Amruta Marathe</td>
-                  <td>1234567897</td>
-                  <td>amruta@gmail.com</td>
-                  <td>Female</td>
-                  <td>1yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
+                  <td colspan="11" class="text-center">
+                    No data found for Trainer
                   </td>
                 </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Pooja Lende</td>
-                  <td>1234567897</td>
-                  <td>pooja@gmail.com</td>
-                  <td>Female</td>
-                  <td>2yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
-                  </td>
-                </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
@@ -394,63 +409,61 @@
               <thead>
                 <tr>
                   <th>Sr.N</th>
+                  <th>Id</th>
                   <th>Name</th>
-                  <th>Contact</th>
-                  <th>Mail ID</th>
+                  <th>Email</th>
                   <th>Gender</th>
                   <th>Experience</th>
-                  <th>Action</th>
+                  <th>Job Post</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
+                <% let hrData = data.filter(val => val.job_post_type === 'HR');
+                if (hrData.length > 0) { hrData.forEach((val, index) => { %>
                 <tr>
-                  <td>1.</td>
-                  <td>Sakshi Kandge</td>
-                  <td>1234567897</td>
-                  <td>sakshi@gmail.com</td>
-                  <td>Female</td>
-                  <td>Fresher</td>
+                  <td><%= index + 1 %>.</td>
+                  <td><%= val.candidate_id %></td>
+                  <td><%= val.candidate_name %></td>
+                  <td><%= val.candidate_email %></td>
+                  <td><%= val.candidate_gender %></td>
+                  <td><%= val.candidate_experience %></td>
+                  <td><%= val.job_post_type %></td>
                   <td>
-                    <a href="/edit">
+                    <a href="/view_candidate/<%= val.candidate_id %>">
                       <i
                         class="bi bi-box-arrow-up-right fw-bold"
+                        style="cursor: pointer; color: #006d77"
+                      ></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href="/delete_candidate/<%- val.candidate_id %>"
+                      onclick="return confirm('Are you sure?')"
+                    >
+                      <i
+                        class="bi bi-trash fw-bold"
+                        style="cursor: pointer; color: crimson"
+                      ></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="/edit_candidate/<%- val.candidate_id %>">
+                      <i
+                        class="bi bi-pencil fw-bold"
                         style="cursor: pointer; color: #006d77"
                       ></i
                     ></a>
                   </td>
                 </tr>
+                <% }); } else { %>
                 <tr>
-                  <td>2.</td>
-                  <td>Amruta Marathe</td>
-                  <td>1234567897</td>
-                  <td>amruta@gmail.com</td>
-                  <td>Female</td>
-                  <td>1yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
-                  </td>
+                  <td colspan="11" class="text-center">No data found for HR</td>
                 </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Pooja Lende</td>
-                  <td>1234567897</td>
-                  <td>pooja@gmail.com</td>
-                  <td>Female</td>
-                  <td>2yrs</td>
-                  <td>
-                    <a href="/edit">
-                      <i
-                        class="bi bi-box-arrow-up-right fw-bold"
-                        style="cursor: pointer; color: #006d77"
-                      ></i
-                    ></a>
-                  </td>
-                </tr>
+                <% } %>
               </tbody>
             </table>
           </div>

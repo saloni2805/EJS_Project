@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Candidate</title>
+    <!-- Bootstrap CDN -->
+    <%- include('../../cdn.ejs') %>
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+                height: 120vh;
+                margin: 0;
+            }
+        </style>
+</head>
+
+<body class="d-flex justify-content-center align-items-center bg-light">
+    <div class="card p-4" style="
+        background-color: #006d77;
+        border-radius: 1rem;
+        width: 30rem;
+        color: white;
+      ">
+        <!-- <h4 class="fw-bold mb-3 text-center">Sign Up</h4> -->
+
+        <form action="/schedule_interview" method="POST">
+            <input type="hidden" name="id" value="<%-data.candidate_id%>" id="" />
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Candidate Name</label>
+                <input type="text" class="form-control" id="candidate_name" name="candidate_name"
+                    value="<%-data.candidate_name%>" placeholder="Enter your name" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label for="signupEmail" class="form-label">Candidate Email</label>
+                <input type="email" class="form-control" id="candidate_email" name="candidate_email"
+                    value="<%-data.candidate_email%>" placeholder="Enter your email" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label for="candidate_gender" class="form-label">Candidate Gender</label>
+                <select class="form-select" name="candidate_gender" id="candidate_gender" disabled>
+                    <option value="Male" <%-(data.candidate_gender=='Male' ? 'selected' : null) %> >Male</option>
+                    <option value="Female" <%-(data.candidate_gender=='Female' ? 'selected' : null) %> >Female</option>
+                </select>
+                <input type="hidden" name="candidate_gender" value="<%- data.candidate_gender %>" />
+            </div>
+
+            <div class="mb-3">
+                <label for="candidate_experience" class="form-label">Candidate Experience</label>
+                <input type="text" class="form-control" id="candidate_experience" name="candidate_experience"
+                    value="<%-data.candidate_experience%>" placeholder="Enter Experience" readonly />
+            </div>
+            <div class="mb-3">
+                <label for="job_post_type" class="form-label">Job Type</label>
+                <select class="form-select" name="job_post_type" id="job_post_type" disabled>
+                    <option value="Telecaller" <%-(data.job_post_type=='Telecaller' ? 'selected' : null) %> >Telecaller
+                    </option>
+                    <option value="Counsellor" <%-(data.job_post_type=='Counsellor' ? 'selected' : null) %> >Counsellor
+                    </option>
+                    <option value="Trainer" <%-(data.job_post_type=='Trainer' ? 'selected' : null) %> >Trainer</option>
+                    <option value="HR" <%-(data.job_post_type=='HR' ? 'selected' : null) %> >HR</option>
+                </select>
+                <input type="hidden" name="job_post_type" value="<%- data.job_post_type %>" />
+            </div>
+
+            <!-- Scheduled On -->
+            <div class="mb-3">
+                <label for="scheduled_on" class="form-label fw-semibold">Scheduled On</label>
+                <div class="input-group">
+                    <input type="date" class="form-control" id="scheduled_on" name="scheduled_on"
+                        value="<%- data.scheduled_on || '' %>" placeholder="E.g., 08ᵗʰ Apr 2025, 11:45 am" required />
+                </div>
+            </div>
+
+            <!-- Remark -->
+            <div class="mb-3">
+                <label for="remark" class="form-label fw-semibold">Remark</label>
+                <textarea class="form-control" id="remark" name="remark" rows="3" placeholder="Add your remark here..."
+                    required><%- data.remark || '' %></textarea>
+            </div>
+
+
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-light fw-semibold mt-3 px-3 w-50">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

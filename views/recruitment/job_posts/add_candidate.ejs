@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CDN -->
+    <%- include('../../cdn.ejs') %>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="d-flex justify-content-center align-items-center bg-light">
+    <div
+      class="card p-4"
+      style="
+        background-color: #006d77;
+        border-radius: 1rem;
+        width: 30rem;
+        color: white;
+      "
+    >
+      <!-- <h4 class="fw-bold mb-3 text-center">Sign Up</h4> -->
+
+      <form action="/save_candidate_form" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Candidate Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="candidate_name"
+            name="candidate_name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Candidate Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="candidate_email"
+            name="candidate_email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="candidate_gender" class="form-label"
+            >Candidate Gender</label
+          >
+          <select
+            class="form-select"
+            name="candidate_gender"
+            id="candidate_gender"
+            required
+          >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="candidate_experience" class="form-label"
+            >Candidate Experience</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="candidate_experience"
+            name="candidate_experience"
+            placeholder="Enter Experience"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="job_post_type" class="form-label">Job Type</label>
+          <select
+            class="form-select"
+            name="job_post_type"
+            id="job_post_type"
+            required
+          >
+            <option value="Telecaller">Telecaller</option>
+            <option value="Counsellor">Counsellor</option>
+            <option value="Trainer">Trainer</option>
+            <option value="HR">HR</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+          <button
+            type="submit"
+            class="btn btn-light fw-semibold mt-3 px-3 w-50"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
